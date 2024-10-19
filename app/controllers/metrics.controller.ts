@@ -1,11 +1,14 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import MetricsService from '#services/metrics.service'
+import { MetricReq } from '#validators/metrics.validator'
 
 const metricsService = new MetricsService()
 
 export default class MetricsController {
   public async getIOPS({ request, response }: HttpContext) {
     try {
+      await request.validateUsing(MetricReq)
+
       const start = request.input('start') as string
       const end = request.input('end') as string
 
@@ -39,6 +42,7 @@ export default class MetricsController {
 
   public async getThroughputs({ request, response }: HttpContext) {
     try {
+      await request.validateUsing(MetricReq)
       const start = request.input('start') as string
       const end = request.input('end') as string
 
