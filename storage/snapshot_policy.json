@@ -1,0 +1,168 @@
+[
+  {
+    "id": "d3632cc1-0851-478a-8477-66721eae762c",
+    "policyName": "Weekly Backup",
+    "applyToDirectory": "/home/user/documents",
+    "scheduleType": "Daily or Weekly",
+    "snapshotTime": {
+      "hours": 14,
+      "minutes": 30
+    },
+    "days": [
+      "Mon",
+      "Wed",
+      "Fri"
+    ],
+    "deleteEachSnapshot": {
+      "after": 7,
+      "unit": "day"
+    },
+    "enableLockedSnapshots": true,
+    "enablePolicy": true
+  },
+  {
+    "id": "1ba5c325-8957-4845-8300-2b0fff3ac914",
+    "policyName": "Monthly Backup",
+    "applyToDirectory": "/home/user/documents",
+    "scheduleType": "Daily or Weekly",
+    "snapshotTime": {
+      "hours": 14,
+      "minutes": 30
+    },
+    "days": [
+      "Mon",
+      "Wed",
+      "Fri"
+    ],
+    "deleteEachSnapshot": {
+      "after": 7,
+      "unit": "day"
+    },
+    "enableLockedSnapshots": true,
+    "enablePolicy": true
+  },
+  {
+    "id": "b5b9957c-90a2-4734-a545-73ff269f528d",
+    "policyName": "Weekly Backup",
+    "applyToDirectory": "/home/user/documents",
+    "scheduleType": "Daily or Weekly",
+    "snapshotTime": {
+      "hours": 14,
+      "minutes": 30
+    },
+    "days": [
+      "Mon",
+      "Wed",
+      "Fri"
+    ],
+    "deleteEachSnapshot": {
+      "after": 7,
+      "unit": "day"
+    },
+    "enableLockedSnapshots": true,
+    "enablePolicy": true
+  },
+  {
+    "id": "2cb56443-691d-488b-9d63-f9529826f52f",
+    "policyName": "Weekly Backup",
+    "applyToDirectory": "/home/user/documents",
+    "scheduleType": "Daily or Weekly",
+    "snapshotTime": {
+      "hours": 14,
+      "minutes": 30
+    },
+    "days": [
+      "Mon",
+      "Wed",
+      "Fri"
+    ],
+    "deleteEachSnapshot": {
+      "after": 7,
+      "unit": "day"
+    },
+    "enableLockedSnapshots": true,
+    "enablePolicy": true
+  },
+  {
+    "id": "ef82bcdd-bae2-4247-a15a-39f2b0d869df",
+    "policyName": "Weekly Backup",
+    "applyToDirectory": "/home/user/documents",
+    "scheduleType": "Daily or Weekly",
+    "snapshotTime": {
+      "hours": 14,
+      "minutes": 30
+    },
+    "days": [
+      "Mon",
+      "Wed",
+      "Fri"
+    ],
+    "deleteEachSnapshot": {
+      "after": 7,
+      "unit": "day"
+    },
+    "enableLockedSnapshots": true,
+    "enablePolicy": true
+  },
+  {
+    "id": "041913dc-355b-4f91-bcdd-9761fe7ee045",
+    "policyName": "Weekly Backup",
+    "applyToDirectory": "/home/user/documents",
+    "scheduleType": "Daily or Weekly",
+    "snapshotTime": {
+      "hours": 14,
+      "minutes": 30
+    },
+    "days": [
+      "Mon",
+      "Wed",
+      "Fri"
+    ],
+    "deleteEachSnapshot": {
+      "after": 7,
+      "unit": "day"
+    },
+    "enableLockedSnapshots": true,
+    "enablePolicy": true
+  },
+  {
+    "id": "c27afc6a-643c-4e58-b7cd-602ae0bf52b9",
+    "policyName": "All Backup",
+    "applyToDirectory": "/home/user/documents",
+    "scheduleType": "Daily or Weekly",
+    "snapshotTime": {
+      "hours": 14,
+      "minutes": 30
+    },
+    "days": [
+      "Mon",
+      "Wed",
+      "Fri"
+    ],
+    "deleteEachSnapshot": {
+      "after": 7,
+      "unit": "day"
+    },
+    "enableLockedSnapshots": true,
+    "enablePolicy": true
+  },
+  {
+    "id": "b540458e",
+    "policyName": "My Backup 22",
+    "applyToDirectory": "/git/hub",
+    "scheduleType": "Monthly",
+    "snapshotTime": {
+      "hours": 21,
+      "minutes": 33
+    },
+    "days": [
+      "Every day"
+    ],
+    "deleteEachSnapshot": {
+      "after": 23,
+      "unit": "week"
+    },
+    "enableLockedSnapshots": true,
+    "enablePolicy": false
+  }
+]
