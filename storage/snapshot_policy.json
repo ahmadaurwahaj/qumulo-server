@@ -156,13 +156,13 @@
       "minutes": 33
     },
     "days": [
-      "Every day"
+      "Mon"
     ],
     "deleteEachSnapshot": {
       "after": 23,
       "unit": "week"
     },
     "enableLockedSnapshots": true,
-    "enablePolicy": false
+    "enablePolicy": true
   }
 ]

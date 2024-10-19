@@ -1,8 +1,8 @@
 import router from '@adonisjs/core/services/router'
 import { middleware } from './kernel.js'
 
-const MetricsController = () => import('#controllers/metrics_controller')
-const SnapshotPoliciesController = () => import('#controllers/snapshot_policies_controller')
+const MetricsController = () => import('#controllers/metrics.controller')
+const SnapshotPoliciesController = () => import('#controllers/snapshot.controller')
 
 router
   .group(() => {

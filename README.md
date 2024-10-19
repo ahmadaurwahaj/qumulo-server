@@ -1,14 +1,20 @@
-# 🌋 Artifact Portal (Adonis JS) 🌋
+# 🌋 Artifact Portal (AdonisJS Backend) 🌋
 
-## Getting Started
+Welcome to the Artifact Portal backend! This project serves as the backend for managing and monitoring clusters using AdonisJS. It provides API endpoints for various functionalities, such as time series data visualization, snapshot policy management, and more.
 
-These instructions will get your copy of the Artifact Portal up and running on your local machine for development and testing purposes. Follow these simple steps:
+## 🚀 Getting Started
+
+These instructions will guide you to set up and run the Artifact Portal backend locally for development and testing purposes.
 
 ### Prerequisites
 
-Make sure you have Node.js installed on your system. We use [`nvm` (Node Version Manager)](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating) to manage Node.js versions:
+Make sure you have the following tools installed on your system:
 
-1. **Install and use the proper version of Node.js:**
+- Node.js: We use nvm (Node Version Manager) to manage Node.js versions.
+
+### Installation
+
+1. Install and use the proper version of Node.js:
 
    ```bash
    nvm install 20 && nvm use 20
@@ -16,76 +22,129 @@ Make sure you have Node.js installed on your system. We use [`nvm` (Node Version
 
    This command installs and switches to the Node.js version specified in the `.nvmrc` file located in the project's root directory.
 
-2. **Install project dependencies:**
+2. Install project dependencies:
 
    ```bash
    npm install
    ```
 
-   Using `npm install` helps ensure that your package versions match those in `package-lock.json`, providing a more consistent installation process.
+   This command installs all necessary packages based on the `package.json` and `package-lock.json` files.
 
-3. **Start the application in development mode:**
+3. Start the application in development mode:
 
    ```bash
    npm run dev
    ```
 
-   This command compiles and launches the application, making it available at [http://localhost:3333](http://localhost:3333).
+   This command starts the AdonisJS application, making it available at `http://localhost:3333`.
 
+4. Configure the environment variables:
 
-## Project Structure
-
-Our project uses a structured directory layout to organize the various parts of the application. Below is an overview of the key directories and their intended purposes:
-
-### Directory Structure
-
-        .
-        ├── ...
-        ├───app/
-        │   ├───Controllers
-        │   ├───Models
-        │   └───Validators
-        │   └───Middlewears
-        ├───config/
-        ├───start/
-        ├───storage/
-        ├───tests/
-        ...
-        .# .env, package.json, .ace,
-        .# .eslintrc, tsconfig.json, .gitignore,
-        .# etc...
-        ...
-        └── README.md
-
-## Creating Controllers
-
-You can generate a controller using the AdonisJS CLI:
+   Create a `.env` file in the root directory and copy the contents from `.env.example`. Update the values based on your local environment configuration.
 
    ```bash
-   node ace make:controller UserController
+   cp .env.example .env
    ```
 
-   This will create a file in app/Controllers/Http/UserController.ts. You can add methods to handle your routes inside this controller.
+## 📂 Project Structure
 
+The project is organized into several directories, each serving a distinct purpose to maintain a clear and scalable structure.
 
-## Creating Validators
+### Key Directories
 
-You can generate a validator using the AdonisJS CLI:
+```
+.
+├── app/
+│   ├── Controllers/Http        # Application controllers handling HTTP requests
+│   ├── Models                  # ORM models for managing data interactions
+│   ├── Services                # Business logic and data processing services
+│   ├── Validators              # Schema-based request validation
+│   ├── Middleware              # Custom application middleware
+│   └── Exceptions              # Error handling logic
+│
+├── config/                     # Application configuration files
+├── database/                   # Database migration and seed files
+├── public/                     # Public assets and files
+├── storage/                    # Storage for JSON data, uploads, etc.
+├── start/                      # Application start hooks and service providers
+├── tests/                      # Automated tests
+└── .env                        # Environment variables file
+```
 
-   ```bash
-   node ace make:validator UserValidator
-   ```
+## 📚 Creating Essential Components
 
-   This will create a file in app/Validators/Http/UserValidator.ts. You can add methods to handle your routes inside this validator.
+### Creating Controllers
 
+Generate a controller using the AdonisJS CLI:
 
-   ## Creating Middlewares
+```bash
+node ace make:controller MetricsController
+```
 
-You can generate a controller using the AdonisJS CLI:
+This creates a file in `app/Controllers/Http/MetricsController.ts`. Add methods to handle your routes and logic within this file.
 
-   ```bash
-  node ace make:middleware AuthMiddleware
-   ```
+### Creating Services
 
-   This will create a file in app/Middlewares/Http/AuthMiddleware.ts. You can add methods to handle your routes inside this middleware.
+Services are placed in `app/Services` and handle business logic or data interactions. Create a service manually or by using the AdonisJS CLI to keep your controller thin and focused.
 
+### Creating Validators
+
+Generate a validator using the AdonisJS CLI:
+
+```bash
+node ace make:validator SnapshotPolicyValidator
+```
+
+This creates a file in `app/Validators/SnapshotPolicyValidator.ts`. Add validation schemas using tools like `@ioc:Adonis/Core/Validator` to ensure data integrity.
+
+### Creating Middleware
+
+Generate middleware using the AdonisJS CLI:
+
+```bash
+node ace make:middleware AuthMiddleware
+```
+
+This creates a file in `app/Middleware/AuthMiddleware.ts`. Add your authentication logic here to protect routes.
+
+## 🗂 Data Handling
+
+The application uses the file system to manage and store JSON data. You can find the relevant files in the `storage/` directory. We also utilize utility functions to read and write data efficiently, ensuring that the application can handle large datasets with ease.
+
+### Using Utility Functions
+
+We have centralized reusable functions in the `app/Utils` folder. For instance, the `readDataFromFile` function helps read JSON files consistently across the application.
+
+## 📈 API Endpoints
+
+The backend exposes various API endpoints to support the frontend's needs. Some of the notable features include:
+
+- Time Series Graphs: Provides endpoints to retrieve IOPS and throughput data over time.
+- Snapshot Policy Management: Offers CRUD operations to manage snapshot policies, with features like snapshot locking and policy scheduling.
+
+Refer to the endpoint documentation for details on the available routes, request parameters, and responses.
+
+## ⚙️ Engineering Practices
+
+We adhere to the following best practices throughout the codebase:
+
+- Type Safety: The project uses TypeScript for type safety and to catch errors at compile time.
+- Data Validation: All incoming requests are validated using AdonisJS validators to ensure data integrity.
+- Loading and Error States: We handle loading and error states gracefully, ensuring a smooth user experience.
+- Utility-Driven: Common functions are refactored into utility modules, promoting DRY principles and maintainability.
+- Code Linting and Formatting: We have integrated ESLint and Prettier to enforce coding standards and maintain consistency across the codebase.
+- Streamlined Project Structure: The folder structure is designed to scale, allowing more features and pages to be added effortlessly.
+
+## 🧪 Testing
+
+Automated tests are placed in the `tests/` directory. We encourage Test-Driven Development (TDD) to improve code reliability and minimize bugs. To run tests:
+
+```bash
+npm run test
+```
+
+This command executes all test suites, ensuring that your changes don't break existing functionality.
+
+## 📜 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

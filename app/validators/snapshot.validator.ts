@@ -1,7 +1,7 @@
 import vine from '@vinejs/vine'
 import { InferInput } from '@vinejs/vine/types'
 
-export const snapshotPolicyValidator = vine.compile(
+export const SnapshotPolicyValidator = vine.compile(
   vine.object({
     policyName: vine.string().trim().minLength(3).maxLength(50),
     applyToDirectory: vine.string().trim().minLength(1),
@@ -27,4 +27,4 @@ export const snapshotPolicyValidator = vine.compile(
   })
 )
 
-export type SnapshotPolicyType = InferInput<typeof snapshotPolicyValidator>
+export type SnapshotPolicyType = InferInput<typeof SnapshotPolicyValidator>
