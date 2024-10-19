@@ -30,7 +30,9 @@ Make sure you have the following tools installed on your system:
 
    This command installs all necessary packages based on the `package.json` and `package-lock.json` files.
 
-3. Start the application in development mode:
+3. Add .env provided in email
+
+4. Start the application in development mode:
 
    ```bash
    npm run dev
@@ -38,7 +40,7 @@ Make sure you have the following tools installed on your system:
 
    This command starts the AdonisJS application, making it available at `http://localhost:3333`.
 
-4. Configure the environment variables:
+5. Configure the environment variables:
 
    Create a `.env` file in the root directory and copy the contents from `.env.example`. Update the values based on your local environment configuration.
 
