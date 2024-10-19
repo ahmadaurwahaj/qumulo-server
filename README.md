@@ -136,6 +136,7 @@ We adhere to the following best practices throughout the codebase:
 - Utility-Driven: Common functions are refactored into utility modules, promoting DRY principles and maintainability.
 - Code Linting and Formatting: We have integrated ESLint and Prettier to enforce coding standards and maintain consistency across the codebase.
 - Streamlined Project Structure: The folder structure is designed to scale, allowing more features and pages to be added effortlessly.
+- API Security: API can only be accessed using API key, no unauthorised user can access APIs.
 
 ## 🧪 Testing
 
